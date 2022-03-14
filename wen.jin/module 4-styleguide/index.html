@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>CSS Styleguide</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./lib/css/index.css">
+    <link rel="stylesheet" href="./lib/gridsystem.css">
+    <link rel="stylesheet" href="./css/storetheme.css">
 </head>
 <body>
     <header class="header">
@@ -30,6 +33,34 @@
                 <li>
                     <a href="#Navigation">Navigation</a>
                 </li>
+                <li>
+                    <a href="#Grids">Grids</a>
+                </li>
+                <li>
+                    <a href="#Cards">Cards</a>
+                </li>
+                <li>
+                    <a href="#Color Paltte">Color Paltte</a>
+                </li>
+                <li>
+                    <a href="#Tables">Tables</a>
+                </li>
+                <li>
+                    <a href="#Figures">Firgurs</a>
+                </li>
+                <li>
+                    <a href="#Forms">Forms</a>
+                </li>
+                <li>
+                    <a href="#Inputs">Inputs</a>
+                </li>
+                <li>
+                    <a href="#Labels">Labels</a>
+                </li>
+                <li>
+                    <a href="#Controls">Controls</a>
+                </li>
+                <li>
             </ul>
         </div>
     </section>
@@ -61,5 +92,116 @@
             </ul>
         </div>
     </section>
+
+    </section>
+    <section id="Grids">
+        <p class="title">Grids</p>
+        <div class="gridbox Card">
+      <div class="gridbox card">
+        <div class="grid1">1/1</div>
+        <div class="grid2">1/2</div>
+        <div class="grid3">1/2</div>
+        <div class="grid4">1/3</div>
+        <div class="grid5">1/3</div>
+        <div class="grid6">1/3</div>
+      </div>
+    </div>
+    <br />
+
+    <div class="container" id="Table of Contents">
+        <div class="card">
+      <h2>Cards</h2>
+      <div class="grid gap">
+        <div class="col-xs-12 col-md-4">
+          <div class="card">Card</div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="card soft">Card Soft</div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="card hard">Card Hard</div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="card dark">Card Dark</div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="card medium">Card Medium</div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="card flat">Card Flat</div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="styleguidecontainer">
+      <h2>Navigations</h2>
+      <div class="nav-container card soft">
+        <h3>Basic Navigation</h3>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+      <br />
+      <div class="cardStyle card soft">
+        <h3>Flex Navigation</h3>
+        <div class="nav-container nav-flex">
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+      <br />
+      <div class="cardStyle card soft">
+        <h3>Stretch Navigation</h3>
+        <div class="nav-container nav-stretch">
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+      <br />
+      <div class="cardStyle card soft">
+        <h3>Pills Navigation</h3>
+        <div class="nav-container nav-pills">
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+      <br />
+      <div class="cardStyle card soft">
+        <h3>Breadcrumbs Navigation</h3>
+        <div class="nav-container nav-crumbs">
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+      <br />
+
+        <script>
+            $("#navigations a").on("click", function (e) {
+                e.preventDefault();
+                $(this).closest("li").addClass("active")
+                    .siblings().removeClass("active")
+            })
+        </script>
+    </div>
+
 </body>
 </html>
