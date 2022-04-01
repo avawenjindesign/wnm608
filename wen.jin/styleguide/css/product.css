@@ -1,0 +1,27 @@
+.product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    border: 1px solid #44546A;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.product-item .image {
+    width: 220px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 300px;
+    transition: 1s;
+    display: block;
+}
+
+.product-item .image:hover {
+    background-size: auto 450px;
+}

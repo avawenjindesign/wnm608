@@ -1,0 +1,16 @@
+.designers {
+    display: flex;
+}
+
+.designers .image img {
+    width: 400px;
+    height: 500px;
+}
+
+
+.designers .info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
