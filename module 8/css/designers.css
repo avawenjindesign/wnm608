@@ -1,0 +1,23 @@
+.designers {
+    display: flex;
+}
+
+.designers .image {
+    background-image: url(../images/image.png);
+    padding-left: 280px;
+    background-size: auto 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.designers .image img {
+    height: 500px;
+}
+
+
+.designers .info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
