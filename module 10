@@ -1,1 +1,665 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN LOGIN</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+<?php include './Nav.php' ?>
+<div class="w admin">
+    <form action="user-list.php" method="get">
+        <div>
+            <label for="adminId">ADMIN ID</label>
+            <input type="text" id="adminId" placeholder="Your Admin Id">
+        </div>
+        <div>
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" placeholder="Your Email">
+        </div>
+        <div>
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" placeholder="Your Password">
+        </div>
+        <div>
+            <button type="submit">SIGN IN</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
+<?php
+$carts = json_decode(file_get_contents("./json/carts.json"));
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CARTS</title>
+    <link rel="stylesheet" href="./css/carts.css">
+</head>
+<body>
+<?php include 'Nav.php' ?>
+<div class="w carts-wrap">
+    <?php
+    foreach ($carts as $cart) {
+        ?>
+        <div class="carts-item">
+            <div class="cover">
+                <img src="<?php echo $cart->product->image?>" alt="cover">
+            </div>
+            <div class="info">
+                <p class="title"><?php echo $cart->product->name?></p>
+                <p>FRAME/BOSE <?php echo $cart->color?></p>
+                <p>Size: <?php echo $cart->size?></p>
+            </div>
+            <div class="number">
+                <span>QUANTITY: </span>
+                <span class="sub-btn">-</span>
+                <span class="number"><?php echo $cart->number?></span>
+                <span class="plus-btn">+</span>
+                <span class="price">Price: $<?php echo $cart->product->price?></span>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+
+</div>
+<div class="w">
+    <a href="./payment.php">
+        <button type="button" class="checkout-btn">CHECK OUT</button>
+    </a>
+</div>
+
+<script>
+    window.onload = () => {
+        document.querySelectorAll('.sub-btn').forEach(e => {
+            const number = e.parentElement.querySelector(".number");
+            e.onclick = () => {
+                number.innerHTML = `${Math.max(1, number.innerHTML - 1)}`;
+            }
+        });
+        document.querySelectorAll('.plus-btn').forEach(e => {
+            const number = e.parentElement.querySelector(".number");
+            e.onclick = () => {
+                number.innerHTML = `${number.innerHTML - 0 + 1}`;
+            }
+        })
+    }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+<?php include './Nav.php' ?>
+<div class="w contact">
+    <form action="#" method="post">
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" placeholder="Your First Name">
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" placeholder="Your Last Name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="Your e-mail address">
+        </div>
+        <div>
+            <label for="country">Country</label>
+            <select>
+                <option>America</option>
+                <option>China</option>
+                <option>Russia</option>
+            </select>
+        </div>
+        <div>
+            <label for="subject">Subject</label>
+            <textarea rows="10" placeholder="Subject"></textarea>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIGNERS</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/designers.css">
+</head>
+
+<body>
+<?php include './Nav.php' ?>
+<div class="w designers">
+    <div class="image">
+        <img src="images/designers.png" alt="story">
+    </div>
+    <div class="info">
+        <h1 style="font-size: 40px;text-align: center;">DESIGNERS</h1>
+        <p style="text-align: center;"><i>Design to enhance <br><br> everyday life.</i></p>
+        <div class="desc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+            <p>eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <p>Ut enim ad minim veniam,</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social media special page.</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+<?php include './Nav.php' ?>
+<div class="w detail">
+    <div class="image">
+        <img src="images/image.png" alt="img">
+    </div>
+    <div class="info">
+        <h1>Social media special page.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et</p>
+        <ul class="icons-text">
+            <li>
+                <img src="./images/icons/facebook.png" alt="icons">
+                Your facebook page
+            </li>
+            <li>
+                <img src="./images/icons/xiangji.png" alt="icons">
+                @your_username
+            </li>
+            <li>
+                <img src="./images/icons/video.png" alt="icons">
+                Your youtube channel
+            </li>
+            <li>
+                <img src="./images/icons/Phoneshouji.png" alt="icons">
+                +xxx-xxx-xxxx
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCATION</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/location.css">
+</head>
+
+<body>
+<?php include './Nav.php' ?>
+<div class="w location">
+    <div class="info">
+        <h1>Location</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        <p> elit, sed do eiusmod tempor incididunt ut labore et </p>
+        <p>dolore magna aliqua. Ut enim ad minim veniam, </p>
+        <p>quis nostrud exercitation ullamco laboris nisi ut</p>
+        <p>aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="image">
+        <img src="./images/location.webp" alt="map">
+    </div>
+</div>
+</body>
+
+</html>
+<link rel="stylesheet" href="./css/index.css">
+<header class="header w">
+    <div class="logo">
+        <img src="images/logo.jpg" alt="logo">
+    </div>
+    <div class="nav">
+        <div class="admin-link">
+            <a href="">Login</a>
+            <br>
+            <a href="admin.php">Admin Login</a>
+            <br>
+            <a href="carts.php">Carts</a>
+        </div>
+        <ul>
+            <li>
+                <a href="story.php">BRAND STORY</a>
+            </li>
+            <li>
+                <a href="designers.php">DESIGNERS</a>
+            </li>
+            <li>
+                <a href="product.php">PRODUCT</a>
+            </li>
+            <li>
+                <a href="location.php">LOCATION</a>
+            </li>
+            <li>
+                <a href="contact.php">CONTACT</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+<?php include 'Nav.php' ?>
+<div class="w contact">
+    <h1>Payment Information</h1>
+    <form action="#" method="post">
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" placeholder="Your First Name">
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" placeholder="Your Last Name">
+        </div>
+        <div>
+            <label for="address">Address</label>
+            <input type="text" placeholder="Your address">
+        </div>
+        <div>
+            <label for="address">Date</label>
+            <input type="date" placeholder="Your Date">
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+<?php
+$file_get_contents = file_get_contents("./json/products.json");
+
+$products = json_decode($file_get_contents);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+<?php include './Nav.php' ?>
+<div class="product w">
+    <?php
+    foreach ($products as $item) {
+        ?>
+        <div class="product-item">
+            <a href="product-detail.php?id=<?php echo $item->id ?>" class="image"
+               style="background-image: url(<?php echo $item->image ?>);">
+            </a>
+            <div class="info">
+                <p><?php echo $item->name ?></p>
+                <p>$<?php echo $item->price ?></p>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+</div>
+</body>
+</html>
+<?php
+$products = json_decode(file_get_contents("./json/products.json"));
+$carts = json_decode(file_get_contents("./json/carts.json"));
+$product = [];
+if (isset($_GET['id'])) {
+    $product = $products[$_GET['id'] - 1];
+}
+if (isset($_GET['type'])) {
+    if ($_GET['type'] == 'addCarts') {
+        $color = $_GET['color'];
+        $size = $_GET['size'];
+        $number = $_GET['number'];
+        $productId = $_GET['productId'];
+        $product = $products[$productId - 1];
+        $product->image = $_GET['image'];
+
+        array_push($carts, [
+            'color' => $color,
+            'size' => $size,
+            'number' => $number,
+            'product' => $product
+        ]);
+        print_r($carts);
+        file_put_contents("./json/carts.json", json_encode($carts));
+        header('location: carts.php');
+        exit();
+    }
+}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="./css/product-detail.css">
+</head>
+<body>
+<?php include './Nav.php' ?>
+<div class="w product-detail">
+    <div class="cover">
+        <img src="<?php echo $product->image ?>" id="cover" alt="cover" class="cover-big" width="400" height="545">
+        <div class="cover-small">
+            <?php
+            foreach ($product->images as $image) {
+                ?>
+                <img src="<?php echo $image ?>" alt="cover-small" height="100">
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+    <div class="info">
+        <h3><?php echo $product->name ?></h3>
+        <?php
+        if ($_GET['id'] == 1) {
+            ?>
+            <div class="info-type">
+                <p class="title">1. FRAME/BASE</p>
+
+                <div style="position: relative;display: flex">
+                    <div class="select" style="left: -99px">√</div>
+                    <img src="images/c1.jpg" alt="c" data-index="0" height="80" width="80" class="cs"
+                         data-value="Graphite">
+                    <img src="images/c2.jpg" alt="c" data-index="1" height="80" width="80" class="cs"
+                         data-value="Mineral">
+                    <img src="images/c3.jpg" alt="c" data-index="2" height="80" width="80" class="cs"
+                         data-value="Graphite">
+                </div>
+            </div>
+            <div class="info-type">
+                <p class="title">1. FRAME/BASE</p>
+                <div class="size-select">
+                    <div data-index="0" class="active">Size A - Small</div>
+                    <div data-index="1">Size B - Medium</div>
+                    <div data-index="2">Size C - Large</div>
+                </div>
+            </div>
+        <?php } ?>
+        <p>
+            <span>QUANTITY: </span>
+            <span class="number-btn" id="sub-btn">-</span>
+            <span id="number">1</span>
+            <span class="number-btn" id="plus-btn">+</span>
+        </p>
+        <p>Price: $<?php echo $product->price ?></p>
+        <div>
+            <button class="add-cart-btn">ADD TO ORDER</button>
+            <a href="product.php">
+                <button class="back-btn">BACK TO PRODUCT</button>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = () => {
+        let number = 1;
+        let color = 'Graphite/Graphite';
+        let size = 'Size A - Small';
+        let productId = <?php echo $_GET['id']?>;
+        let image = '<?php echo $product->image?>';
+
+        document.querySelector(".add-cart-btn").onclick = () => {
+            window.location = `product-detail.php?type=addCarts&color=${color}&size=${size}&number=${number}&productId=${productId}&image=${image}`;
+        };
+
+        document.getElementById("sub-btn").onclick = () => {
+            number = Math.max(1, number - 1);
+            document.getElementById("number").innerText = `${number}`;
+        };
+        document.getElementById("plus-btn").onclick = () => {
+            number++;
+            document.getElementById("number").innerText = `${number}`;
+        };
+        document.querySelectorAll(".cover-small img").forEach((e) => {
+            e.onclick = () => {
+                document.getElementById("cover").attributes.src.value = e.attributes.getNamedItem("src").value
+            }
+        });
+        document.querySelectorAll(".info-type .cs").forEach(e => {
+            const colors = ['Graphite/Graphite', 'Mineral/Stain Aluminum', 'Graphite/Polished Aluminum'];
+            const images = ['./images/12.jpg', './images/11.jpg', './images/13.jpg'];
+            let index = 0;
+            e.onclick = () => {
+                index = e.attributes['data-index'].value;
+                document.querySelector(".info-type .select").style.left = (index * 80) + 'px';
+                color = colors[index];
+                document.getElementById("cover").attributes.src.value = images[index];
+                image = images[index]
+            }
+        });
+
+        document.querySelectorAll(".size-select div").forEach(e => {
+            const sizes = ['Size A - Small', 'Size B - Medium', 'Size C - Large'];
+            let index = 0;
+            e.onclick = () => {
+                e.parentElement.querySelectorAll("div").forEach(e2 => {
+                    e2.className = ""
+                });
+                e.className = "active";
+                index = e.attributes['data-index'].value;
+                size = sizes[index];
+            }
+        })
+    }
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAND STORY</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/story.css">
+</head>
+
+<body>
+<?php include './Nav.php' ?>
+<div class="w story">
+    <div class="image">
+        <img src="images/story.png" alt="story" width="625">
+    </div>
+    <div class="info">
+        <h1 style="font-size: 40px;margin: 0;">
+            <span style="color:white;">BRAND</span>
+            STORY
+        </h1>
+        <div style="padding-left: 700px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+            <p>elit, sed do eiusmod tempor incididunt ut labore et </p>
+            <p>dolore magna aliqua. Ut enim ad minim veniam,</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+<?php
+$str = file_get_contents("./json/users.json");
+$usersList = json_decode($str);
+$formUser = null;
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    foreach ($usersList as $user) {
+        if ($user->id == $id) {
+            $formUser = $user;
+        }
+    }
+} else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $occupation = $_POST['occupation'];
+    $email = $_POST['email'];
+    $jsonList = [];
+    foreach ($usersList as $user) {
+        if ($user->id == $id) {
+            array_push($jsonList, [
+                'id' => $id,
+                'name' => $name,
+                'occupation' => $occupation,
+                'email' => $email
+            ]);
+        } else {
+            array_push($jsonList, $user);
+        }
+    }
+    file_put_contents("./json/users.json", json_encode($jsonList));
+    header('location: user-list.php');
+    exit();
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERLIST ADMIN</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user-form.css">
+</head>
+
+<body>
+<?php include './Nav.php' ?>
+<div class="w">
+    <h1 class="title">USER ADMIN</h1>
+</div>
+<div class="w user-form">
+    <h2>USER LIST</h2>
+
+    <form action="user-form.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $formUser->id ?>">
+        <div>
+            <label for="name">NAME</label>
+            <input type="text" name="name" id="name" placeholder="<?php echo $formUser->name ?>"
+                   value="<?php echo $formUser->name ?>">
+        </div>
+        <div>
+            <label for="occupation">OCCUPATIOM</label>
+            <input type="text" name="occupation" id="occupation" placeholder="<?php echo $formUser->occupation ?>"
+                   value="<?php echo $formUser->occupation ?>">
+        </div>
+        <div>
+            <label for="email">EMAIL</label>
+            <input type="text" name="email" id="email" placeholder="<?php echo $formUser->email ?>"
+                   value="<?php echo $formUser->email ?>">
+        </div>
+        <div>
+            <button type="submit">SUBMIT</button>
+        </div>
+        <div>
+            <a href="user-list.php" class="backBtn">Cancel</a>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
+<?php
+$str = file_get_contents("./json/users.json");
+$usersList = json_decode($str);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERLIST ADMIN</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user-list.css">
+</head>
+
+<body>
+<?php include './Nav.php' ?>
+<div class="w">
+    <h1 class="title">USER ADMIN</h1>
+</div>
+<div class="w user-list">
+    <h2>USER LIST</h2>
+    <ul class="users">
+        <?php
+        foreach ($usersList as $user) {
+            ?>
+            <li>
+                <a href="user-form.php?id=<?php echo $user->id ?>"><?php echo $user->name ?></a>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+</div>
+</body>
+
+</html>
