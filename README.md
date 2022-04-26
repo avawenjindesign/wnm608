@@ -1,3 +1,3 @@
 # Wen Jin
 
--https://avawenjindesign.github.io/wnm608/index.html
+http://avawenjindesign.com/module%209/product.php
