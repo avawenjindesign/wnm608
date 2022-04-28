@@ -1,0 +1,11 @@
+.story {
+    position: relative;
+}
+
+.story .info {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    top: 380px;
+    position: absolute;
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "image": "images/4.jpg",
+    "price": 1195,
+    "name": "AERON CHAIR",
+    "images": [
+      "images/4.jpg",
+      "images/9.jpg",
+      "images/10.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "image": "images/1.jpg",
+    "price": 995,
+    "name": "MIRRA 2",
+    "images": [
+      "images/1.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "image": "images/2.jpg",
+    "price": 595,
+    "name": "LINO CHAIR",
+    "images": [
+      "images/2.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "image": "images/3.jpg",
+    "price": 1745,
+    "name": "EMBODY CHAIR",
+    "images": [
+      "images/3.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "image": "images/5.jpg",
+    "price": 3295,
+    "name": "EAMES SOFT PAD CHAIR",
+    "images": [
+      "images/5.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "image": "images/6.jpg",
+    "price": 1095,
+    "name": "MODA DESK",
+    "images": [
+      "images/6.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "image": "images/7.jpg",
+    "price": 373,
+    "name": "INPUT ORGANIZER",
+    "images": [
+      "images/7.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "image": "images/8.jpg",
+    "price": 3295,
+    "name": "RENEW DESK WITH EMBEDDED POWER",
+    "images": [
+      "images/8.jpg"
+    ]
+  }
+]
