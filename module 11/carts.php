@@ -1,5 +1,10 @@
 <?php
 $carts = json_decode(file_get_contents("./json/carts.json"));
+if (isset($_GET['type'])) {
+    $id = $_GET['id'];
+    array_splice($carts, $id, 1);
+    file_put_contents("./json/carts.json", json_encode($carts));
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,6 +21,7 @@ $carts = json_decode(file_get_contents("./json/carts.json"));
 <div class="w carts-wrap">
     <?php
     $yf = false;
+    $index = 0;
     foreach ($carts as $cart) {
         if ($cart->product->id == 6 || $cart->product->id == 7) {
             $yf = true;
@@ -45,8 +51,17 @@ $carts = json_decode(file_get_contents("./json/carts.json"));
                 <span class="plus-btn">+</span>
                 <span class="price">Price: $<?php echo $cart->product->price ?></span>
             </div>
+            <div style="display: flex;flex-direction: column;justify-content: center;padding: 0 20px">
+                <p>
+                    <img src="./images/icons/edit.png" alt="edit" width="20">
+                    <a href="carts.php?type=delete&id=<?php echo $index ?>">
+                        <img src="./images/icons/delete.png" alt="delete" width="20">
+                    </a>
+                </p>
+            </div>
         </div>
         <?php
+        $index++;
     }
     ?>
 
@@ -71,7 +86,7 @@ $carts = json_decode(file_get_contents("./json/carts.json"));
         document.querySelectorAll('.sub-btn').forEach(e => {
             const number = e.parentElement.querySelector(".number");
             e.onclick = () => {
-                const n = Math.max(1, number.innerHTML - 1);
+                const n = Math.max(0, number.innerHTML - 1);
                 number.innerHTML = `${n}`;
                 number.attributes['data-number'].value = n;
                 getAmount();
