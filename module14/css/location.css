@@ -1,8 +1,0 @@
-.location {
-    display: flex;
-    justify-content: space-between;
-}
-
-.location .info {
-    padding: 20px;
-}
