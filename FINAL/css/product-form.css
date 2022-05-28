@@ -1,0 +1,81 @@
+.user-form{
+    background-color: #E7E6E6;
+    border-radius: 20px;
+    padding: 30px;
+    /*border: 2px solid #44546A;*/
+}
+
+.w .title{
+    color: #44546A;
+}
+
+.user-form h2{
+    color: #44546A;
+}
+
+.user-form .users{
+    list-style: none;
+    margin: 0;
+}
+
+.user-form .users li {
+    padding: 10px 0;
+}
+
+.user-form .users li a{
+    color: #44546A;
+    text-decoration: none;
+}
+
+.user-form form>div{
+    display: flex;
+    height: 30px;
+    margin: 20px 0;
+}
+
+.user-form form>div>label {
+    display: block;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 30px;
+    flex: 1.5;
+}
+
+.user-form form>div>input,
+.user-form form>div>select,
+.user-form form>div>textarea {
+    display: block;
+    min-height: 30px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #BBB5AE;
+    margin: 0;
+    padding-left: 10px;
+    flex: 9;
+}
+
+.user-form form>div>button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    min-height: 35px;
+    border: 0;
+    background-color: #44546A;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.user-form .backBtn{
+    /*border: 1px solid #44546A;*/
+    font-weight: bold;
+    background-color: #BBB5AE;
+    flex: 1;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
